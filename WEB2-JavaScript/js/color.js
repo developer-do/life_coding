@@ -7,10 +7,13 @@ var links = {
   setColor(color) {
     let alist = document.querySelectorAll('a');
     for (let i = 0; i < alist.length; i++) {
-      console.log(alist[i]);
       alist[i].style.color = color;
       alist[i].style.transition = "all 1.5s";
     }
+    // $('a').css({
+    //   color: color,
+    //   transition: "all 1.5s"
+    // });
   }
 }
 
@@ -20,6 +23,9 @@ var bodyColor = {
   },
   setBgc(color) {
     body.style.backgroundColor = color;
+  },
+  setTransTime(time) {
+    body.style.transition = time;
   }
 };
 
@@ -31,14 +37,14 @@ function night() {
       if (this.value === "night") {
         bodyColor.setColor("white");
         bodyColor.setBgc("black");
-        body.style.transition = "all 1.5s";
+        bodyColor.setTransTime("all 1.5s");
         this.value = "day";
 
         links.setColor("powderblue");
       } else {
         bodyColor.setColor("black");
         bodyColor.setBgc("white");
-        body.style.transition = "all 1.5s";
+        bodyColor.setTransTime("all 1.5s");
         this.value = "night";
         
         links.setColor("blue");
