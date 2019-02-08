@@ -1,0 +1,127 @@
+@import '../../scss/_reset.scss';
+@import '_color.scss';
+@import '_class.scss';
+
+#wrap {
+  width: 80%;
+  min-width: 800px;
+  margin: 0 auto;
+  position: relative;
+
+  header {
+    padding: 20px;
+    background: {
+      color: $subColor;
+    }
+    color: #fff;
+    font: {
+      size: 35px;
+      weight: bold;
+    }
+    text-align: center;
+  }
+
+  #fixedSpan {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    border: 1px solid $subColor;
+    transition: all 0.3s;
+
+    span {
+      position: relative;
+      width: 80%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      display: block;
+      transition: all 0.3s;
+      border: {
+        bottom: 2px solid $subColor;
+      }
+      &:after, &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        border: {
+          bottom: 2px solid $subColor;
+        }
+        transition: all 0.3s;
+      }
+      &:after {
+        top: 11px;
+      }
+      &:before {
+        bottom: 9px;
+      }
+    }
+
+    &:hover {
+      background: {
+        color: $subColor;
+      }
+      transition: all 0.3s;
+
+      span {
+        border: {
+          color: #fff;
+        }
+        transition: all 0.3s;
+        &:after, &:before {
+          border: {
+            color: #fff;
+          }
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+
+  .menu {
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index:9999;
+    width: 100%;
+    height: 100%;
+    background: {
+      color: #fff;
+    }
+
+    ul {
+      li {
+        font: {
+          size: 15px;
+          weight: bold;
+        }
+        border:1px solid rgba($mainColor, 0.8);
+        border: {
+          bottom: none;
+        }
+        &:last-child {
+          border-bottom: 1px solid rgba($mainColor, 0.8);
+        }
+
+        a {
+          display: block;
+          padding: 8px;
+        }
+      }
+    }
+    p {
+      padding: 15px;
+      background: {
+        color: $subColor;
+      }
+      color: #fff;
+      font: {
+        size: 20px;
+        weight: bold;
+      }
+    }
+  }
+}

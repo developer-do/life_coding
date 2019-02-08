@@ -1,0 +1,114 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+/* always display scrollbars */
+body {
+  font-size: 62.5%;
+  line-height: 1;
+  font-family: Arial, Tahoma, Verdana, sans-serif;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+input {
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* clear.scss */
+.clear {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.bender {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* main.scss */
+body {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+#wrap h1 {
+  text-align: center;
+  font-size: 35px;
+  padding: 10px;
+}
+#wrap .alink p {
+  height: 50px;
+  text-align: center;
+  margin-top: 15px;
+}
+#wrap .alink p a {
+  display: block;
+  width: 500px;
+  line-height: 50px;
+  margin: 0 auto;
+  transition: all 0.3s;
+  font-size: 20px;
+  border-radius: 25px;
+  border-bottom: 1px solid #fff;
+}
+#wrap .alink p a:hover {
+  background-color: #ecf0f1;
+  border-radius: 25px;
+  color: #34495e;
+  transition: all 0.3s;
+}
+
+/*# sourceMappingURL=main.css.map */

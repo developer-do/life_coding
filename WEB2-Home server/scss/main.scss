@@ -1,0 +1,51 @@
+@import '_reset.scss';
+@import '_clear.scss';
+@import '_color.scss';
+
+/* main.scss */
+body {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+#wrap {
+  h1 {
+    text-align: center;
+    font: {
+      size: 35px;
+    }
+    padding: 10px;
+  }
+  .alink {
+    p {
+      height: 50px;
+      text-align:center;
+      margin: {
+        top: 15px;
+      }
+      a {
+        display: block;
+        width: 500px;
+        line-height: 50px;
+        margin: 0 auto;
+        transition: all 0.3s;
+        font: {
+          size: 20px;
+        }
+        border: {
+          radius: 25px;
+          bottom: 1px solid #fff;
+        }
+        &:hover {
+          background: {
+            color: $fontColor;
+          }
+          border: {
+            radius: 25px;
+          }
+          color: $bgcColor;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+}
