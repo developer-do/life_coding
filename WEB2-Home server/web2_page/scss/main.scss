@@ -112,7 +112,8 @@
         }
       }
     }
-    p {
+    .clickHide {
+      cursor: pointer;
       padding: 15px;
       background: {
         color: $subColor;
