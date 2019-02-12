@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title>WEB1 - HTML</title>
+    <meta charset="utf-8">
+    <style>
+      a {
+        color: blue;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1><a href="index.html">WEB</a></h1>
+    <input type="button" value="night" class="toggle">
+    <div id="grid">
+      <ol id="nav">
+        
+      </ol>
+      <!-- 
+        <h1><a href="index.html"><font color="red">WEB</font></a></h1>
+        <ol>
+          <li><a href="1.html"><font color="red">HTML</font></a></li>
+          <li><a href="2.html"><font color="red">CSS</font></a></li>
+          <li><a href="3.html"><font color="red">JavaScript</font></a></li>
+        </ol>
+      -->
+      <article></article>
+      
+    <script src="fetch/fetch.js"></script>
+    <script>
+      function fetchPage(name) {
+        fetch(name).then(function(a) {
+          a.text().then(function(b){
+            document.querySelector('article').innerHTML = b;
+          });
+        });
+      }
+
+      if(location.hash) {
+        console.log(fetchPage(location.hash.substr(2)));
+      } else {
+        fetchPage('Welcome');
+      }
+
+      fetch('list').then(function(a) {
+        a.text().then(function(b) {
+          let list = b.split(",");
+          let nav = document.querySelector("#nav");
+          let tag = "";
+          for(let i = 0; i < list.length; i++) {
+            let item = list[i].trim();
+            tag += `<li><a href="#!${item}" onclick="fetchPage('${item}');">${item}</a></li>`;
+          }
+          nav.innerHTML = tag;
+        });
+      });
+    </script>
+    <script src="js/color.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <article>
+      
+    </article>
+    <input type="button" value="fetch" onclick="
+      // fetch('html').then(function(response) {
+      //   response.text().then(function(text){
+      //     document.querySelector('article').innerHTML = text;
+      //   });
+      // });
+
+      // Asynchronous
+      fetch('css').then(function(a){
+        console.log(a);
+        if(a.status == '404') {
+          alert('Not found');
+        } else if(a.status == '200') {
+          alert('ok!');
+        }
+      });
+      console.log(1);
+      console.log(2);
+    ">
+  </body>
+</html>
