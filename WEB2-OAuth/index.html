@@ -5,6 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table td{
+      border: 1px solid #000;
+    }
+  </style>
 </head>
 <body>
   <h1>WEB2-OAuth 시작</h1>
@@ -18,5 +27,28 @@
   <p>User - Resource Owner(정보의 소유자 || 당사자)</p>
   <p>Their(Google , Facebook , Twitter) - Resource Server(정보 자원을 가지고 있어서 이렇게 부른다.)</p>
   <p>Their에서 또 두 가지로 나눌수 있는데 Resource Server(데이터를 가지고 있는 서버) Authorization Server(인증과 관련한 정보를 가지고 있는 서버) 공식메뉴얼에서는 두 가지를 구분해서 보여주지만 수업에서는 Resource Server로 통일 하겟다.</p>
+
+  <h2>WEB2 - OAuth 2.0 : 3. 등록</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/_mm5ks5aWQ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div>
+    <h3>Create app</h3>
+    <hr>
+    <table>
+      <tr>
+        <td>Client ID</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Client Secret</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Authoruzed redirect URIs</td>
+        <td>https://client/callback</td>
+      </tr>
+    </table>
+  </div>
+
+
 </body>
 </html>
