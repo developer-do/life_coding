@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    p {
+      margin-bottom: 20px;
+    }
+
+    p > * {
+      width: 500px; 
+    }
+  </style>
+</head>
+<body>
+  <form action="form.php" method="POST">
+    <p><input type="text" name="title" placeholder="TITLE"></p>
+    <p><textarea name="description"></textarea></p>
+    <p><input type="submit" value="submit"></p>
+  </form>
+</body>
+</html>
