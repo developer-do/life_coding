@@ -5,25 +5,15 @@
     'skdicls1',
     'opentutorials'
   );
-  print_r($_POST);
+
+  settype($_POST['id'], 'integer');
   $filtered = array(
-    'title'         => mysqli_real_escape_string($conn, $_POST['title']),
-    'description'   => mysqli_real_escape_string($conn, $_POST['description']),
-    'author_id'     => mysqli_real_escape_string($conn, $_POST['author_id'])
+    'id' => mysqli_real_escape_string($conn, $_POST['id'])
   );
   $sql = "
-    INSERT INTO topic (
-      title,
-      description,
-      created,
-      author_id
-    )
-    VALUES (
-      '{$filtered['title']}',
-      '{$filtered['description']}',
-      NOW(),
-      '{$filtered['author_id']}'
-    );
+    DELETE FROM topic 
+    WHERE
+      id = {$filtered['id']}
   ";
   $result = mysqli_query($conn, $sql);
   if($result === false) {
@@ -35,4 +25,3 @@
   }
   // echo $sql;
 ?>
-
