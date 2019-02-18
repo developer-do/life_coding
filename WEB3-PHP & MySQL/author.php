@@ -22,10 +22,33 @@
     $table_list .= "<td>{$filtered['name']}</td>";
     $table_list .= "<td>{$filtered['profile']}</td>";
     $table_list .= "<td><a href='author.php?id={$filtered['id']}'>update</a></td>";
-    // $table_list .= "<td><input type='button' ></td>";
+    $table_list .= "<td><form onsubmit=\"if(!confirm('sure?')){return false;}\" action='process_delete_author.php' method='POST'>";
+    $table_list .= "<input type='hidden' name='id' value='".$filtered['id']."'>";
+    $table_list .= "<input type='submit' value='delete'>";
+    $table_list .= "</form></td>";
     $table_list .= "</tr>";
   }
 
+  /* update */
+  $escaped = array(
+    'name'    => '',
+    'profile' => ''
+  );
+  $label_submit = 'Create author';
+  $form_action ='process_create_author.php';
+  $form_id = '';
+  if(isset($_GET['id'])) {
+    $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
+    settype($filtered_id, 'integer');
+    $sql = "SELECT * FROM author WHERE id = {$filtered_id}";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $escaped['name']    = htmlspecialchars($row['name']);
+    $escaped['profile'] = htmlspecialchars($row['profile']);
+    $label_submit = 'Update author';
+    $form_action = 'process_update_author.php';
+    $form_id = '<input type="hidden" name="id" value="'.$_GET['id'].'">';
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,25 +72,7 @@
     <?= $table_list ?>
   </table>
   <?php
-  $escaped = array(
-    'name'    => '',
-    'profile' => ''
-  );
-  $label_submit = 'Create author';
-  $form_action ='process_create_author.php';
-  $form_id = '';
-  if(isset($_GET['id'])) {
-    $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
-    settype($filtered_id, 'integer');
-    $sql = "SELECT * FROM author WHERE id = {$filtered_id}";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_array($result);
-    $escaped['name']    = htmlspecialchars($row['name']);
-    $escaped['profile'] = htmlspecialchars($row['profile']);
-    $label_submit = 'Update author';
-    $form_action = 'process_update_author.php';
-    $form_id = '<input type="hidden" name="id" value="'.$_GET['id'].'">';
-  }
+  
   ?>
   <form action="<?= $form_action ?>" method="POST">
     <?= $form_id ?>
